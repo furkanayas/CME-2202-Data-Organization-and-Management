@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!--
+     STUDENT ID, 10 bas integer değer (totaldigits)
+       STUDENT NAME, string
+       STUDENT SURNAME, string
+         COURSE CODE, ilk 3 büyük harf devamında 4 sayı, toplam 7 karakter
+         COURSE CREDIT, tekbasinteger
+	     MID1,MID2,HW1,HW2,HW3,FINAL,GRADE,STATUS
+	     midler 0 la 100 arasında pozitif integer lar
+	     statu Successful yada Failed 2 durum
+	     Grade 2 büyük harfte harf notu, 2 harfta AF kısıtlmasında
+	     
+     -->
+     
+	
+	
+	<xsd:element name="Students">	
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="Student" tpye="stdnt" minOccurs="0"  maxOccurs="unbounded"/>
+		</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:complexType name="stdnt">
+		
+		<xsd:sequence>
+			<xsd:element name="Studentname" tpye="xsd:string"/>
+			<xsd:element name="Studentsurname" tpye="xsd:string"/>
+			<xsd:element name="Course" type="crs" minOccurs="0"  maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="studentid"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="crs">
+		<xsd:sequence>
+			<xsd:element name="Coursecredit" type="coursecredi"/>
+			<xsd:element name="Mid1" type="examresult"/>
+			<xsd:element name="Mid2" type="examresult"/>
+			<xsd:element name="Hw1" type="examresult"/>
+			<xsd:element name="Hw2" type="examresult"/>
+			<xsd:element name="Hw3" type="examresult"/>
+			<xsd:element name="Final" type="examresult"/>
+			<xsd:element name="Grade" type="lettergrade"/>
+			<xsd:element name="Status" type="statu"/>
+		</xsd:sequence>
+		<xsd:attribute name="coursecode" type="coursecod"/>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="studentid">
+		<xsd:restriction base="xsd:integer">
+			<xsd:totalDigits value="10"/>
+			</xsd:restriction>	
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="coursecod">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	 
+		<xsd:simpleType name="coursecredi">
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="9"/>
+          </xsd:restriction>
+	    </xsd:simpleType>
+	
+	<xsd:simpleType name="examresult">
+	  <xsd:restriction base="xsd:nonNegativeInteger">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="100"/>
+          </xsd:restriction>
+	</xsd:simpleType>
+	
+	
+	<xsd:simpleType name="statu">
+       <xsd:restriction base="xsd:string">
+         <xsd:pattern value="Successful|Failed|Absent"/>
+       </xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="lettergrade">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z][A-Z]|[A-Z]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	
+	
+</xsd:schema>

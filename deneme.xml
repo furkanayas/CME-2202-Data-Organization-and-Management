@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+     STUDENT ID,
+       STUDENT NAME,
+       STUDENT SURNAME,
+         COURSE CODE,
+         COURSE CREDIT,
+         MID1,MID2,HW1,HW2,HW3,FINAL,GRADE,STATUS
+     -->
+     
+<Students>
+	<Student id="2015700001">
+		<Studentname>Mesut</Studentname>
+		<Studentsurname>GAVGA</Studentsurname>
+		
+		<Course coursecode="CME2202">			
+			<Coursecredit>3</Coursecredit>
+			<Mid1>68</Mid1>
+			<Mid2>74</Mid2>
+			<Hw1>80</Hw1>
+			<Hw2>75</Hw2>
+			<Hw3>65</Hw3>
+			<Final>70</Final>
+			<Grade>CB</Grade>
+			<Status>Successful</Status>
+		</Course>		
+	</Student>
+	<Student id="2016700018">
+		<Studentname>Merve Rana</Studentname>
+		<Studentsurname>Sarı</Studentsurname>
+		
+		<Course coursecode="CME2202">			
+			<Coursecredit>3</Coursecredit>
+			<Mid1>0</Mid1>
+			<Mid2>0</Mid2>
+			<Hw1>0</Hw1>
+			<Hw2>0</Hw2>
+			<Hw3>0</Hw3>
+			<Final>0</Final>
+			<Grade>D</Grade>
+			<Status>Absent</Status>
+		</Course>		
+	</Student>	
+	<Student id="2016700019">
+		<Studentname>Mehmet Emin</Studentname>
+		<Studentsurname>TATLI</Studentsurname>
+		
+		<Course coursecode="CME2204">			
+			<Coursecredit>3</Coursecredit>
+			<Mid1>20</Mid1>
+			<Mid2>12</Mid2>
+			<Hw1>0</Hw1>
+			<Hw2>25</Hw2>
+			<Hw3>0</Hw3>
+			<Final>30</Final>
+			<Grade>FF</Grade>
+			<Status>Failed</Status>
+		</Course>		
+	</Student>
+</Students>
